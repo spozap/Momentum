@@ -13,6 +13,8 @@ androidTools = "31.12.2"
 androidDesugarJdkLibs = "2.1.4"
 ksp = "2.2.20-2.0.3"
 hilt = "2.56"
+appcompat = "1.6.1"
+material = "1.10.0"
 
 [libraries]
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
@@ -42,6 +44,8 @@ gradle-api = { module = "com.android.tools.build:gradle-api", version.ref = "agp
 android-tools-common = { module = "com.android.tools:common", version.ref = "androidTools" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -50,10 +54,12 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 
 # own plugins
 momentum-android-application = { id = "dev.spozap.momentum.android.application" }
 momentum-android-application-compose = { id = "dev.spozap.momentum.android.application.compose" }
 momentum-android-library = { id = "dev.spozap.momentum.library" }
 momentum-android-library-compose = { id = "dev.spozap.momentum.library.compose" }
+momentum-android-feature = { id = "dev.spozap.momentum.android.feature" }
 momentum-hilt = { id = "dev.spozap.momentum.hilt" }

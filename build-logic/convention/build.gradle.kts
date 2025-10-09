@@ -46,6 +46,12 @@ gradlePlugin {
                 "dev.spozap.momentum.convention.HiltConventionPlugin"
         }
 
+        register("androidFeature") {
+            id = libs.plugins.momentum.android.feature.get().pluginId
+            implementationClass =
+                "dev.spozap.momentum.convention.AndroidFeatureConventionPlugin"
+        }
+
     }
 }
 

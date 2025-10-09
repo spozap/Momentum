@@ -1,6 +1,5 @@
-package dev.spozap.momentum.ui.theme
+package dev.spozap.momentum.core.designsystem
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
