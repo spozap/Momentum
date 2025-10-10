@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.momentum.android.feature)
+    alias(libs.plugins.momentum.android.library)
     alias(libs.plugins.momentum.android.library.compose)
 }
 
