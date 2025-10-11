@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import dev.spozap.momentum.core.designsystem.MomentumTheme
+import androidx.navigation.compose.rememberNavController
+import dev.spozap.momentum.core.designsystem.theme.MomentumTheme
+import dev.spozap.momentum.navigation.AppNavHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +14,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MomentumTheme {
-
+                AppNavHost(rememberNavController())
             }
         }
     }

@@ -1,4 +1,4 @@
-package dev.spozap.momentum.core.designsystem
+package dev.spozap.momentum.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

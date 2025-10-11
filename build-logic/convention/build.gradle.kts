@@ -52,6 +52,12 @@ gradlePlugin {
                 "dev.spozap.momentum.convention.AndroidFeatureConventionPlugin"
         }
 
+        register("jvmLibrary") {
+            id = libs.plugins.momentum.library.jvm.get().pluginId
+            implementationClass =
+                "dev.spozap.momentum.convention.JvmLibConventionPlugin"
+        }
+
     }
 }
 

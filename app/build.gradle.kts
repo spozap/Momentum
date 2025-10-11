@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.momentum.android.application)
     alias(libs.plugins.momentum.android.application.compose)
+    alias(libs.plugins.momentum.hilt)
 }
 
 android {
@@ -35,6 +36,8 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.hilt.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -43,4 +46,7 @@ dependencies {
 
     implementation(projects.core.designsystem)
 
+
+    //features
+    implementation(projects.feature.home)
 }

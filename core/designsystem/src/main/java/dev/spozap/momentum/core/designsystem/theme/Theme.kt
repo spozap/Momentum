@@ -1,4 +1,4 @@
-package dev.spozap.momentum.core.designsystem
+package dev.spozap.momentum.core.designsystem.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
@@ -13,6 +13,7 @@ fun MomentumTheme(
 
     CompositionLocalProvider(
         LocalAppColors provides colorScheme,
+        LocalAppTypography provides typography,
         content = content
     )
 
@@ -21,4 +22,8 @@ fun MomentumTheme(
 object AppTheme {
     val colorScheme: AppColors
         @Composable get() = LocalAppColors.current
+
+    val typography: AppTypography
+        @Composable get() = LocalAppTypography.current
+
 }

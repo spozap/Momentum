@@ -1,0 +1,16 @@
+package dev.spozap.momentum.convention
+
+import dev.spozap.momentum.convention.config.configureKotlinJvm
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.apply
+
+class JvmLibConventionPlugin : Plugin<Project> {
+    override fun apply(target: Project) {
+        with(target) {
+            apply(plugin = "org.jetbrains.kotlin.jvm")
+
+            configureKotlinJvm()
+        }
+    }
+}

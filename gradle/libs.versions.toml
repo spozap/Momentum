@@ -67,6 +67,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 momentum-android-application = { id = "dev.spozap.momentum.android.application" }
 momentum-android-application-compose = { id = "dev.spozap.momentum.android.application.compose" }
 momentum-android-library = { id = "dev.spozap.momentum.library" }
+momentum-library-jvm = { id = "dev.spozap.momentum.library.jvm" }
 momentum-android-library-compose = { id = "dev.spozap.momentum.library.compose" }
 momentum-android-feature = { id = "dev.spozap.momentum.android.feature" }
 momentum-hilt = { id = "dev.spozap.momentum.hilt" }

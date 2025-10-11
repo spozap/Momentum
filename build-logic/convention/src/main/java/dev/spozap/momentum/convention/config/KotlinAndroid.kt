@@ -3,6 +3,7 @@ package dev.spozap.momentum.convention.config
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -34,6 +35,17 @@ internal fun Project.configureKotlinAndroid(
         "coreLibraryDesugaring"(libs.findLibrary("android.desugarJdkLibs").get())
     }
 
+}
+
+internal fun Project.configureKotlinJvm() {
+    extensions.configure<JavaPluginExtension> {
+        // Up to Java 11 APIs are available through desugaring
+        // https://developer.android.com/studio/write/java11-minimal-support-table
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    configureKotlin<KotlinJvmProjectExtension>()
 }
 
 private inline fun <reified T : KotlinBaseExtension> Project.configureKotlin() = configure<T> {
