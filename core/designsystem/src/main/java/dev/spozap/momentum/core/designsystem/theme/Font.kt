@@ -18,7 +18,6 @@ internal val typography = AppTypography(
     bodyLarge = TextStyle(
         fontSize = 16.sp,
         fontFamily = Exo2,
-        fontWeight = FontWeight.Bold
     ),
     titleLarge = TextStyle(
         fontSize = 24.sp,
