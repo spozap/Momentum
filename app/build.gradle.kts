@@ -45,7 +45,7 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
 
     implementation(projects.core.designsystem)
-
+    implementation(projects.core.ui)
 
     //features
     implementation(projects.feature.home)
