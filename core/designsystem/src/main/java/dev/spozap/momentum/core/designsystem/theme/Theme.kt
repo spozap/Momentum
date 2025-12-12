@@ -26,4 +26,6 @@ object AppTheme {
     val typography: AppTypography
         @Composable get() = LocalAppTypography.current
 
+    val shapes: AppShapes
+        @Composable get() = LocalAppShapes.current
 }

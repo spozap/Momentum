@@ -16,11 +16,16 @@ internal val Exo2 = FontFamily(
 
 internal val typography = AppTypography(
     bodyLarge = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 20.sp,
         fontFamily = Exo2,
     ),
     titleLarge = TextStyle(
         fontSize = 24.sp,
         fontFamily = Exo2
+    ),
+    labelMedium = TextStyle(
+        fontSize = 18.sp,
+        fontFamily = Exo2,
+        fontWeight = FontWeight.Normal
     )
 )

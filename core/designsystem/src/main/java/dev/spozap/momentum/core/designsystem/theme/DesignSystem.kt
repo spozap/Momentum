@@ -1,7 +1,9 @@
 package dev.spozap.momentum.core.designsystem.theme
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.TextStyle
 
 data class AppColors(
@@ -14,7 +16,12 @@ data class AppColors(
 
 data class AppTypography(
     val titleLarge: TextStyle,
-    val bodyLarge: TextStyle
+    val bodyLarge: TextStyle,
+    val labelMedium: TextStyle
+)
+
+data class AppShapes(
+    val buttonSmall: Shape
 )
 
 val LocalAppColors = staticCompositionLocalOf {
@@ -30,6 +37,13 @@ val LocalAppColors = staticCompositionLocalOf {
 val LocalAppTypography = staticCompositionLocalOf {
     AppTypography(
         titleLarge = TextStyle.Default,
-        bodyLarge = TextStyle.Default
+        bodyLarge = TextStyle.Default,
+        labelMedium = TextStyle.Default
+    )
+}
+
+val LocalAppShapes = staticCompositionLocalOf {
+    AppShapes(
+        buttonSmall = RoundedCornerShape(ShapeSizes.smallRadius)
     )
 }

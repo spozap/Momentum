@@ -49,4 +49,5 @@ dependencies {
 
     //features
     implementation(projects.feature.home)
+    implementation(projects.feature.onboarding)
 }

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -27,7 +26,6 @@ fun BoxScope.BottomBar(
     Row(
         modifier = Modifier
             .align(Alignment.BottomCenter)
-            .fillMaxWidth()
             .padding(bottom = 32.dp)
             .clip(RoundedCornerShape(16.dp))
             .background(AppTheme.colorScheme.primary)
