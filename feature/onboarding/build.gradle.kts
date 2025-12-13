@@ -6,3 +6,7 @@ plugins {
 android {
     namespace = "dev.spozap.momentum.feature.onboarding"
 }
+
+dependencies {
+    androidTestImplementation(libs.bundles.androidx.compose.ui.test)
+}

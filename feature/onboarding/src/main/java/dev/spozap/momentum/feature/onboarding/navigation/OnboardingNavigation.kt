@@ -11,10 +11,14 @@ data object OnboardingGraph
 
 // Routes used in OnboardingContainer
 @Serializable
-internal data object OnboardingWelcomeScreen
+internal data object OnboardingWelcomeRoute
 
 @Serializable
-internal data object OnboardingUsernameScreen
+internal data object OnboardingPersonalDataRoute
+
+@Serializable
+internal data object OnboardingTrainingDataRoute
+
 
 fun NavGraphBuilder.onboardingGraph() {
     composable<OnboardingGraph> {
@@ -22,6 +26,11 @@ fun NavGraphBuilder.onboardingGraph() {
     }
 }
 
-internal fun NavController.navigateToOnboardingUsername() = navigate(OnboardingUsernameScreen) {
+internal fun NavController.navigateToOnboardingUsername() = navigate(OnboardingPersonalDataRoute) {
     launchSingleTop = true
 }
+
+internal fun NavController.navigateToOnboardingTrainingData() =
+    navigate(OnboardingTrainingDataRoute) {
+        launchSingleTop = true
+    }

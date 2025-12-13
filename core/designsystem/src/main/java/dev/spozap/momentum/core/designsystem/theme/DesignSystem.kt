@@ -7,11 +7,28 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.TextStyle
 
 data class AppColors(
-    val background: Color,
     val primary: Color,
     val onPrimary: Color,
+
     val secondary: Color,
     val onSecondary: Color,
+
+    val background: Color,
+    val onBackground: Color,
+
+    val surface: Color,
+    val onSurface: Color,
+
+    val surfaceVariant: Color,
+    val onSurfaceVariant: Color,
+
+    val outline: Color,
+
+    val error: Color,
+    val onError: Color,
+
+    val disabled: Color,
+    val onDisabled: Color
 )
 
 data class AppTypography(
@@ -30,7 +47,17 @@ val LocalAppColors = staticCompositionLocalOf {
         onPrimary = Color.Unspecified,
         secondary = Color.Unspecified,
         onSecondary = Color.Unspecified,
-        background = Color.Unspecified
+        disabled = Color.Unspecified,
+        onDisabled = Color.Unspecified,
+        background = Color.Unspecified,
+        onSurface = Color.Unspecified,
+        onSurfaceVariant = Color.Unspecified,
+        surface = Color.Unspecified,
+        surfaceVariant = Color.Unspecified,
+        onError = Color.Unspecified,
+        error = Color.Unspecified,
+        outline = Color.Unspecified,
+        onBackground = Color.Unspecified
     )
 }
 
