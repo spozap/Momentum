@@ -8,5 +8,6 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.data)
     androidTestImplementation(libs.bundles.androidx.compose.ui.test)
 }

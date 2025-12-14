@@ -2,13 +2,21 @@ package dev.spozap.momentum.feature.onboarding.screens
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.spozap.momentum.core.model.training.TrainingGoal
+import dev.spozap.momentum.core.model.user.User
+import dev.spozap.momentum.data.repository.UserRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class OnboardingViewModel(
+@HiltViewModel
+class OnboardingViewModel @Inject constructor(
+    private val userRepository: UserRepository,
     val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -39,6 +47,17 @@ class OnboardingViewModel(
     fun updateTrainingGoal(trainingGoal: TrainingGoal) {
         savedStateHandle[StateHandleKeys.TrainingGoal] = trainingGoal
         _state.update { it.copy(trainingData = it.trainingData.copy(trainingGoal = trainingGoal)) }
+    }
+
+    fun submit() {
+        viewModelScope.launch {
+            val user = User(
+                username = _state.value.personalData.username,
+                emailAddress = _state.value.personalData.email
+            )
+
+            userRepository.create(user)
+        }
     }
 }
 

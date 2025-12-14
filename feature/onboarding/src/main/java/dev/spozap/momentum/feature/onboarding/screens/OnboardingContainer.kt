@@ -116,7 +116,13 @@ internal fun OnboardingContainer(
                 }
                 MomentumButton(
                     modifier = Modifier.weight(1f),
-                    onClick = { handleOnboardingStep(navController, currentRoute) }) {
+                    onClick = {
+                        handleOnboardingStep(
+                            navController = navController,
+                            currentRoute = currentRoute,
+                            onSubmit = viewModel::submit
+                        )
+                    }) {
                     Text("Siguiente", style = AppTheme.typography.labelMedium)
                 }
             }
@@ -124,7 +130,11 @@ internal fun OnboardingContainer(
     }
 }
 
-private fun handleOnboardingStep(navController: NavHostController, currentRoute: String?) {
+private fun handleOnboardingStep(
+    navController: NavHostController,
+    currentRoute: String?,
+    onSubmit: () -> Unit
+) {
     when (currentRoute) {
         OnboardingWelcomeRoute::class.qualifiedName -> {
             navController.navigateToOnboardingUsername()
@@ -132,6 +142,10 @@ private fun handleOnboardingStep(navController: NavHostController, currentRoute:
 
         OnboardingPersonalDataRoute::class.qualifiedName -> {
             navController.navigateToOnboardingTrainingData()
+        }
+
+        OnboardingTrainingDataRoute::class.qualifiedName -> {
+            onSubmit()
         }
     }
 }
