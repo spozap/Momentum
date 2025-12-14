@@ -116,7 +116,7 @@ internal fun OnboardingContainer(
                 }
                 MomentumButton(
                     modifier = Modifier.weight(1f),
-                    onClick = { navigateToOnboardingRoute(navController, currentRoute) }) {
+                    onClick = { handleOnboardingStep(navController, currentRoute) }) {
                     Text("Siguiente", style = AppTheme.typography.labelMedium)
                 }
             }
@@ -124,7 +124,7 @@ internal fun OnboardingContainer(
     }
 }
 
-private fun navigateToOnboardingRoute(navController: NavHostController, currentRoute: String?) {
+private fun handleOnboardingStep(navController: NavHostController, currentRoute: String?) {
     when (currentRoute) {
         OnboardingWelcomeRoute::class.qualifiedName -> {
             navController.navigateToOnboardingUsername()

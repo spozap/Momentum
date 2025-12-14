@@ -58,6 +58,11 @@ gradlePlugin {
                 "dev.spozap.momentum.convention.JvmLibConventionPlugin"
         }
 
+        register("room") {
+            id = libs.plugins.momentum.room.get().pluginId
+            implementationClass = "dev.spozap.momentum.convention.RoomConventionPlugin"
+        }
+
     }
 }
 
@@ -65,4 +70,6 @@ dependencies {
     compileOnly(libs.gradle.api)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.android.tools.common)
+    compileOnly(libs.room.gradlePlugin)
+    compileOnly(libs.ksp.gradlePlugin)
 }

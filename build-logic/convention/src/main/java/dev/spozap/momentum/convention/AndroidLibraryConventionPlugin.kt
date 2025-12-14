@@ -16,11 +16,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
                 testOptions.targetSdk = 36
+                lint.targetSdk = 36
+                defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                testOptions.animationsDisabled = true
 
-                resourcePrefix =
-                    path.split("""\W""".toRegex()).drop(1).distinct().joinToString(separator = "_")
-                        .lowercase() + "_"
-                
+                path.split("""\W""".toRegex()).drop(1).distinct().joinToString(separator = "_")
+                    .lowercase() + "_"
+
             }
         }
     }
